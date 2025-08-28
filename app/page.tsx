@@ -11,6 +11,7 @@ import WhoWeAre from "@/components/WhoWeAre";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
+import PortfolioPage from "@/components/Portfolio";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <Services />
         {/* <Solutions /> */}
         {/* <Expertise /> */}
+        <PortfolioPage />
         <FAQ />
         <Contact />
       </main>

@@ -5,7 +5,7 @@ import InteractiveConstellation from "./InteractiveConstellation";
 export default function Hero() {
   return (
     <section
-      className="relative min-h-screen flex flex-col justify-center text-center px-6 overflow-hidden section-transition"
+      className="relative min-h-screen flex flex-col justify-center text-center px-6 overflow-hidden section-transition mb-16"
       id="hero"
     >
       <div className="absolute inset-0 w-full h-full hero-gradient"></div>
@@ -14,9 +14,6 @@ export default function Hero() {
       <InteractiveConstellation />
 
       <div className="relative z-10 max-w-4xl mx-auto">
-        <div className="inline-block px-4 py-2 bg-white/10 rounded-full mb-6 text-sm font-medium text-gray-300 border border-white/20 shimmer">
-          NEXT-GEN WEB EXPERIENCES
-        </div>
         <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
           Building the
           <br />

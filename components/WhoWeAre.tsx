@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Sphere, Box, Torus } from "@react-three/drei";
 import type * as THREE from "three";
 
-// 3D Interactive Model Component
 function DataVisualization() {
   const groupRef = useRef<THREE.Group>(null);
 
@@ -19,17 +18,15 @@ function DataVisualization() {
 
   return (
     <group ref={groupRef}>
-      {/* Central sphere (medium gray globe) */}
       <Sphere args={[0.8, 32, 32]} position={[0, 0, 0]}>
         <meshStandardMaterial
-          color="#9ca3af" // Tailwind gray-400
+          color="#9ca3af"
           wireframe
           transparent
           opacity={0.7}
         />
       </Sphere>
 
-      {/* Orbiting data nodes (pure white) */}
       {Array.from({ length: 8 }).map((_, i) => {
         const angle = (i / 8) * Math.PI * 2;
         const radius = 2;
@@ -48,7 +45,6 @@ function DataVisualization() {
         );
       })}
 
-      {/* Connection rings (pure white, subtle) */}
       <Torus args={[2, 0.02, 16, 100]} rotation={[Math.PI / 2, 0, 0]}>
         <meshStandardMaterial color="#ffffff" transparent opacity={0.4} />
       </Torus>
@@ -70,17 +66,14 @@ export default function WhoWeAre() {
       const rect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Calculate parallax progress (0 to 1)
       const progress = Math.max(
         0,
         Math.min(1, (windowHeight - rect.top) / (windowHeight + rect.height))
       );
 
-      // Apply parallax transform
       const translateY = (1 - progress) * 100;
       sectionRef.current.style.transform = `translateY(${translateY}px)`;
 
-      // Highlight keywords based on scroll progress
       const keywords = textRef.current.querySelectorAll(".keyword");
       keywords.forEach((keyword, index) => {
         const keywordProgress = Math.max(
@@ -93,7 +86,7 @@ export default function WhoWeAre() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial call
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -101,16 +94,14 @@ export default function WhoWeAre() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen relative overflow-hidden section-transition"
+      className="relative overflow-hidden section-transition pt-36 pb-20"
       id="who-we-are"
     >
-      {/* Background same as Hero (continuous blend across sections) */}
       <div className="absolute inset-0 w-full h-full hero-gradient"></div>
       <div className="absolute inset-0 w-full h-full grid-bg opacity-20"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 min-h-screen flex items-center">
-        <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
-          {/* Text Content */}
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-start w-full">
           <div ref={textRef} className="space-y-8">
             <h2 className="text-6xl lg:text-7xl font-bold leading-tight bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
               Who We Are
@@ -156,7 +147,7 @@ export default function WhoWeAre() {
                 <span className="keyword transition-colors duration-500">
                   data-driven
                 </span>{" "}
-                strategies to optimize your operations providing your business
+                strategies to optimize your operations, providing your business
                 with a{" "}
                 <span className="keyword transition-colors duration-500">
                   competitive edge
@@ -166,7 +157,6 @@ export default function WhoWeAre() {
             </div>
           </div>
 
-          {/* 3D Interactive Model */}
           <div className="h-96 lg:h-[500px] relative">
             <Canvas
               camera={{ position: [5, 2, 5], fov: 50 }}
@@ -190,7 +180,6 @@ export default function WhoWeAre() {
               />
             </Canvas>
 
-            {/* Subtle glow effect */}
             <div className="absolute inset-0 bg-gradient-radial from-white/5 via-transparent to-transparent pointer-events-none"></div>
           </div>
         </div>

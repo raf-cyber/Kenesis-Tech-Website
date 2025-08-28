@@ -34,7 +34,7 @@ export default function Services() {
 
   return (
     <section
-      className="section-transition non-hero-section py-20 relative"
+      className="section-transition non-hero-section relative pt-36 pb-20"
       id="services"
     >
       {/* Grid background */}
