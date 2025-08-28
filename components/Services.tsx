@@ -1,50 +1,85 @@
 export default function Services() {
   const services = [
     {
-      icon: "fas fa-code",
       title: "Web Development",
-      description: "Custom web applications built with cutting-edge technologies and best practices.",
+      description: "Modern, scalable websites with secure architecture.",
+      img: "/web-dev.png",
     },
     {
-      icon: "fas fa-palette",
-      title: "UI/UX Design",
-      description: "Beautiful, intuitive interfaces that provide exceptional user experiences.",
+      title: "UI/UX",
+      description: "Intuitive, user-friendly designs with clean visuals.",
+      img: "/ui-ux.png",
     },
     {
-      icon: "fas fa-cube",
-      title: "Blockchain Integration",
-      description: "Seamless integration of blockchain technology into your digital ecosystem.",
-    },
-    {
-      icon: "fas fa-rocket",
       title: "Performance Optimization",
-      description: "Lightning-fast websites optimized for speed, SEO, and user engagement.",
+      description: "Faster load times and reliable site performance.",
+      img: "/performance.png",
     },
-  ]
+    {
+      title: "AI",
+      description: "AI tools for automation, learning, and vision tasks.",
+      img: "/ai.png",
+    },
+    {
+      title: "SEO",
+      description: "Smarter keywords, optimized content, better reach.",
+      img: "/seo.png",
+    },
+    {
+      title: "SaaS",
+      description: "Cloud-first apps and services that scale with you.",
+      img: "/saas.png",
+    },
+  ];
 
   return (
-    <section className="section-transition non-hero-section" id="services">
+    <section
+      className="section-transition non-hero-section py-20 relative"
+      id="services"
+    >
+      {/* Grid background */}
       <div className="absolute inset-0 w-full h-full grid-bg opacity-10"></div>
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-reveal">Our Services</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-reveal">
-            We provide comprehensive digital solutions to help your business thrive
+        {/* Section Heading - styled like Who We Are */}
+        <div className="mb-16">
+          <h2 className="text-6xl lg:text-7xl font-bold leading-tight bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
+            Our Services
+          </h2>
+
+          <p className="mt-6 text-2xl lg:text-3xl font-medium leading-relaxed text-gray-400 max-w-3xl">
+            We deliver <span className="text-white">digital solutions</span> to
+            help your business <span className="text-white">grow</span>.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Cards Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="service-card text-center">
-              <div className="w-16 h-16 mx-auto mb-6 bg-white/10 rounded-full flex items-center justify-center">
-                <i className={`${service.icon} text-2xl`}></i>
+            <div
+              key={index}
+              className="service-card p-6 rounded-2xl bg-white/10 backdrop-blur-md text-white shadow-lg transition duration-300 hover:shadow-xl"
+            >
+              {/* Image with white outline */}
+              <div className="mb-6 flex items-center justify-center">
+                <img
+                  src={service.img}
+                  alt={service.title}
+                  className="h-20 object-contain border-2 border-white rounded-lg p-2 bg-transparent"
+                />
               </div>
-              <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-              <p className="text-gray-400 leading-relaxed">{service.description}</p>
+
+              {/* Text content */}
+              <h3 className="text-2xl font-bold text-white mb-2">
+                {service.title}
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
