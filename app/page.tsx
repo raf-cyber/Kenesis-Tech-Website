@@ -25,6 +25,7 @@ export default function Home() {
         {/* <Solutions /> */}
         {/* <Expertise /> */}
         <PortfolioPage />
+        {/* <CatalogSection /> */}
         <FAQ />
         <Contact />
       </main>

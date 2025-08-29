@@ -1,14 +1,14 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import { gsap } from "gsap";
 
 interface PortfolioItem {
   id: number;
   title: string;
   description: string;
-  imageUrl: string;
+  videoUrl: string;
   category: string;
+  link?: string;
 }
 
 const PortfolioSlider = () => {
@@ -20,69 +20,63 @@ const PortfolioSlider = () => {
   const portfolioItems: PortfolioItem[] = [
     {
       id: 1,
-      title: "Project One",
+      title: " Zubies — Fashion Website",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia dui lectus.",
-      imageUrl: "/portfolio1.jpg",
+        "A sleek eCommerce platform with stylish UI and smooth shopping flow.",
+      videoUrl: "/videos/Portfolio-1.mp4",
       category: "Design",
+      link: "convaai.vercel.app",
     },
     {
       id: 2,
-      title: "Project Two",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia dui lectus.",
-      imageUrl: "/portfolio2.jpg",
+      title: "DevFolio",
+      description: "A clean, professional portfolio for a software engineer.",
+      videoUrl: "/videos/Portfolio-2.mp4",
       category: "Development",
+      link: "https://tmalikdev.vercel.app",
     },
     {
       id: 3,
-      title: "Project Three",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia dui lectus.",
-      imageUrl: "/portfolio3.jpg",
+      title: "Caulfield High — 1970’s Gallery",
+      description: "A digital gallery capturing high school life in the 1970s.",
+      videoUrl: "/videos/Portfolio-3.mp4",
       category: "Branding",
+      link: "https://hypermind-chi.vercel.app/",
     },
     {
       id: 4,
-      title: "Project Four",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia dui lectus.",
-      imageUrl: "/portfolio4.jpg",
+      title: "SmartCoding — LMS Platform",
+      description: "An LMS for coding courses with seamless learning & sales.",
+      videoUrl: "/videos/Portfolio-4.mp4",
       category: "Marketing",
+      link: "https://scc-courses-main.vercel.app/",
     },
     {
       id: 5,
-      title: "Project Five",
+      title: "Spin — Interactive Sphere",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia dui lectus.",
-      imageUrl: "/portfolio5.jpg",
+        "A fun 3D sphere experience designed for smooth interaction.",
+      videoUrl: "/videos/Portfolio-5.mp4",
       category: "Design",
+      link: "https://threed-sphere.vercel.app/",
     },
   ];
 
-  // Initialize animations
   useEffect(() => {
-    // Set initial active trail
     trailRefs.current[currentIndex]?.classList.add("active");
-
-    // Animate the initial slide
     animateSlide(currentIndex);
   }, []);
 
-  // Animate slide content
   const animateSlide = (index: number) => {
     const card = cardRefs.current[index];
     if (!card) return;
-
     const bg = card.querySelector(".bg");
     const title = card.querySelector("h1");
     const description = card.querySelector("p");
-    const button = card.querySelector("button");
-
+    const button = card.querySelector("a, button");
     const tl = gsap.timeline({
       defaults: { duration: 0.6, ease: "power2.inOut" },
     });
-
     if (bg) tl.fromTo(bg, { x: "-100%", opacity: 0 }, { x: "0%", opacity: 1 });
     if (description)
       tl.fromTo(description, { opacity: 0 }, { opacity: 1 }, "-=0.3");
@@ -102,18 +96,13 @@ const PortfolioSlider = () => {
       );
   };
 
-  // Slide navigation
   const slide = (condition: "increase" | "decrease") => {
-    // Remove active from all trails
     trailRefs.current.forEach((trail) => trail?.classList.remove("active"));
-
-    // Calculate new index
     const newIndex =
       condition === "increase"
         ? (currentIndex + 1) % portfolioItems.length
         : (currentIndex - 1 + portfolioItems.length) % portfolioItems.length;
 
-    // Update slider position
     if (sliderRef.current) {
       const translateX = `-${newIndex * (100 / portfolioItems.length)}%`;
       gsap.to(sliderRef.current, {
@@ -122,23 +111,16 @@ const PortfolioSlider = () => {
         ease: "power2.inOut",
         onComplete: () => {
           setCurrentIndex(newIndex);
-          // Add active to current trail
           trailRefs.current[newIndex]?.classList.add("active");
-          // Animate the new slide content
           animateSlide(newIndex);
         },
       });
     }
   };
 
-  // Trail click handler
   const handleTrailClick = (index: number) => {
     if (index === currentIndex) return;
-
-    // Remove active from all trails
     trailRefs.current.forEach((trail) => trail?.classList.remove("active"));
-
-    // Update slider position
     if (sliderRef.current) {
       const translateX = `-${index * (100 / portfolioItems.length)}%`;
       gsap.to(sliderRef.current, {
@@ -147,9 +129,7 @@ const PortfolioSlider = () => {
         ease: "power2.inOut",
         onComplete: () => {
           setCurrentIndex(index);
-          // Add active to clicked trail
           trailRefs.current[index]?.classList.add("active");
-          // Animate the new slide content
           animateSlide(index);
         },
       });
@@ -161,15 +141,9 @@ const PortfolioSlider = () => {
       className="section-transition non-hero-section py-20 relative"
       id="portfolio"
     >
-      {/* Grid background from Services component */}
       <div className="absolute inset-0 w-full h-full grid-bg opacity-10"></div>
-
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Section Heading - left aligned */}
         <div className="mb-16 text-left">
-          {/* <div className="inline-block px-4 py-2 bg-white/10 rounded-full mb-6 text-sm font-medium text-gray-300 border border-white/20 shimmer">
-            OUR PORTFOLIO
-          </div> */}
           <h2 className="text-6xl lg:text-7xl font-bold leading-tight bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
             Our Portfolio
           </h2>
@@ -178,10 +152,7 @@ const PortfolioSlider = () => {
             to demonstrate our <span className="text-white">expertise</span>.
           </p>
         </div>
-
-        {/* Portfolio Slider Container */}
         <div className="container relative overflow-hidden rounded-3xl">
-          {/* Slider */}
           <div
             ref={sliderRef}
             className="slider flex w-full h-[35rem]"
@@ -196,39 +167,70 @@ const PortfolioSlider = () => {
                 className="box w-full h-full grid grid-cols-2 items-center overflow-hidden relative"
                 style={{ width: `${100 / portfolioItems.length}%` }}
               >
-                {/* Background element */}
                 <div className="bg absolute w-[55%] h-full bg-black/20 -left-[10%] skew-x-[7deg] origin-bottom-left p-8 pl-40">
                   <div className="absolute inset-0 bg-inherit skew-x-[10deg] pointer-events-none"></div>
                 </div>
-
-                {/* Details */}
                 <div className="details z-10 col-span-1 p-10 pl-20">
                   <h1 className="text-4xl font-medium mb-2">{item.title}</h1>
                   <p className="text-gray-400 mb-4">{item.description}</p>
-                  <button className="px-6 py-2 bg-white text-black rounded-full hover:opacity-80 transition-all">
-                    Check Now
-                  </button>
+                  {item.link ? (
+                    <a
+                      href={
+                        item.link.startsWith("http")
+                          ? item.link
+                          : `https://${item.link}`
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block px-6 py-2 bg-white text-black rounded-full hover:opacity-80 transition-all"
+                    >
+                      Check Now
+                    </a>
+                  ) : (
+                    <button
+                      disabled
+                      className="px-6 py-2 bg-gray-600 text-white rounded-full cursor-not-allowed"
+                    >
+                      Check Now
+                    </button>
+                  )}
                 </div>
-
-                {/* Illustration */}
                 <div className="illustration col-span-1 flex justify-center">
-                  <div className="inner relative h-64 w-48 rounded-3xl bg-white/20 skew-x-[-10deg] overflow-hidden">
-                    <Image
-                      src={item.imageUrl}
-                      alt={item.title}
-                      fill
-                      className="object-cover"
-                      style={{ filter: "grayscale(100%)" }}
-                    />
-                    <div className="absolute inset-0 bg-white/40 rounded-3xl transform translate-x-8 -translate-y-4"></div>
-                    <div className="absolute inset-0 bg-white/40 rounded-3xl transform translate-x-4 -translate-y-8"></div>
+                  <div className="inner group relative h-64 w-80 rounded-3xl bg-white/20 skew-x-[-10deg] overflow-hidden transition-transform duration-300 scale-100 hover:scale-110">
+                    {item.link ? (
+                      <a
+                        href={
+                          item.link.startsWith("http")
+                            ? item.link
+                            : `https://${item.link}`
+                        }
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute inset-0 z-10"
+                        aria-label={`Visit ${item.title} project`}
+                      >
+                        <span className="sr-only">
+                          Visit {item.title} project
+                        </span>
+                      </a>
+                    ) : null}
+                    <div className="absolute inset-0 w-full h-full">
+                      <video
+                        src={item.videoUrl}
+                        muted
+                        autoPlay
+                        loop
+                        playsInline
+                        preload="auto"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/40 opacity-100 group-hover:opacity-0 transition-opacity duration-300"></div>
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-
-          {/* Navigation Arrows */}
           <button
             className="prev absolute top-1/2 left-4 transform -translate-y-1/2 w-12 h-20 cursor-pointer opacity-20 hover:opacity-100 transition-all flex items-center justify-center"
             onClick={() => slide("decrease")}
@@ -246,7 +248,6 @@ const PortfolioSlider = () => {
               />
             </svg>
           </button>
-
           <button
             className="next absolute top-1/2 right-4 transform -translate-y-1/2 w-12 h-20 cursor-pointer opacity-20 hover:opacity-100 transition-all flex items-center justify-center"
             onClick={() => slide("increase")}
@@ -264,8 +265,6 @@ const PortfolioSlider = () => {
               />
             </svg>
           </button>
-
-          {/* Trail Indicators */}
           <div className="trail absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4">
             {portfolioItems.map((_, index) => (
               <div
@@ -282,8 +281,6 @@ const PortfolioSlider = () => {
           </div>
         </div>
       </div>
-
-      {/* Custom Styles */}
       <style jsx>{`
         .grid-bg {
           background-image: linear-gradient(
@@ -296,31 +293,6 @@ const PortfolioSlider = () => {
               transparent 1px
             );
           background-size: 20px 20px;
-        }
-        .shimmer {
-          position: relative;
-          overflow: hidden;
-        }
-        .shimmer:after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.2),
-            transparent
-          );
-          transform: translateX(-100%);
-          animation: shimmer 2s infinite;
-        }
-        @keyframes shimmer {
-          100% {
-            transform: translateX(100%);
-          }
         }
         .container {
           background-color: rgba(0, 0, 0, 0.7);
@@ -377,7 +349,7 @@ const PortfolioSlider = () => {
           }
           .inner {
             height: 16rem;
-            width: 12rem;
+            width: 16rem;
           }
         }
       `}</style>
