@@ -1,6 +1,6 @@
 "use client";
 
-import InteractiveConstellation from "./InteractiveConstellation";
+import InteractiveConstellation from "../common/InteractiveConstellation";
 
 export default function Hero() {
   return (

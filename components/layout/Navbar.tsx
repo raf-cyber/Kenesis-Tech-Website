@@ -26,7 +26,7 @@ export default function Navbar() {
         {/* Logo + Brand */}
         <div className="flex items-center space-x-2 magnetic">
           <img
-            src="/K&T-Logo.jpg"
+            src="images/K&T-Logo.jpg"
             alt="Kenesis & Tech Logo"
             className="w-10 h-10 object-contain rounded-full"
           />

@@ -1,17 +1,15 @@
 // pages/index.tsx
-import Preloader from "@/components/Preloader";
-import BackgroundEffects from "@/components/BackgroundEffects";
-import CustomCursor from "@/components/CustomCursor";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Solutions from "@/components/Solutions";
-import Expertise from "@/components/Expertise";
-import WhoWeAre from "@/components/WhoWeAre";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import FAQ from "@/components/FAQ";
-import PortfolioPage from "@/components/Portfolio";
+import Preloader from "@/components/layout/Preloader";
+import BackgroundEffects from "@/components/common/BackgroundEffects";
+import CustomCursor from "@/components/common/CustomCursor";
+import Navbar from "@/components/layout/Navbar";
+import Hero from "@/components/sections/Hero";
+import Services from "@/components/sections/Services";
+import WhoWeAre from "@/components/sections/WhoWeAre";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/layout/Footer";
+import FAQ from "@/components/sections/FAQ";
+import PortfolioPage from "@/components/sections/Portfolio";
 
 export default function Home() {
   return (

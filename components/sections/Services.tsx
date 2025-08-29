@@ -3,32 +3,32 @@ export default function Services() {
     {
       title: "Web Development",
       description: "Modern, scalable websites with secure architecture.",
-      img: "/web-dev.png",
+      img: "images/web-dev.png",
     },
     {
       title: "UI/UX",
       description: "Intuitive, user-friendly designs with clean visuals.",
-      img: "/ui-ux.png",
+      img: "images/ui-ux.png",
     },
     {
       title: "Performance Optimization",
       description: "Faster load times and reliable site performance.",
-      img: "/performance.png",
+      img: "images/performance.png",
     },
     {
       title: "AI",
       description: "AI tools for automation, learning, and vision tasks.",
-      img: "/ai.png",
+      img: "images/ai.png",
     },
     {
       title: "SEO",
       description: "Smarter keywords, optimized content, better reach.",
-      img: "/seo.png",
+      img: "images/seo.png",
     },
     {
       title: "SaaS",
       description: "Cloud-first apps and services that scale with you.",
-      img: "/saas.png",
+      img: "images/saas.png",
     },
   ];
 

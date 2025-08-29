@@ -23,7 +23,7 @@ export default function Footer() {
             {/* Logo Image */}
             <div className="relative w-10 h-10 rounded-full overflow-hidden">
               <Image
-                src="/K&T-Logo.jpg"
+                src="images/K&T-Logo.jpg"
                 alt="Kenesis & Tech Logo"
                 fill
                 className="object-cover"
