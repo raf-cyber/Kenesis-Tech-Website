@@ -144,10 +144,10 @@ const PortfolioSlider = () => {
       <div className="absolute inset-0 w-full h-full grid-bg opacity-10"></div>
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-16 text-left">
-          <h2 className="text-6xl lg:text-7xl font-bold leading-tight bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
             Our Portfolio
           </h2>
-          <p className="mt-6 text-2xl lg:text-3xl font-medium leading-relaxed text-gray-400 max-w-3xl">
+          <p className="mt-6 text-lg sm:text-xl lg:text-3xl font-medium leading-relaxed text-gray-400 max-w-3xl">
             We showcase <span className="text-white">exceptional projects</span>{" "}
             to demonstrate our <span className="text-white">expertise</span>.
           </p>
@@ -155,7 +155,7 @@ const PortfolioSlider = () => {
         <div className="container relative overflow-hidden rounded-3xl">
           <div
             ref={sliderRef}
-            className="slider flex w-full h-[35rem]"
+            className="slider flex w-full h-[30rem] sm:h-[35rem]"
             style={{ width: `${portfolioItems.length * 100}%` }}
           >
             {portfolioItems.map((item, index) => (
@@ -164,14 +164,16 @@ const PortfolioSlider = () => {
                 ref={(el) => {
                   cardRefs.current[index] = el;
                 }}
-                className="box w-full h-full grid grid-cols-2 items-center overflow-hidden relative"
+                className="box w-full h-full grid grid-cols-1 sm:grid-cols-2 items-center overflow-hidden relative"
                 style={{ width: `${100 / portfolioItems.length}%` }}
               >
-                <div className="bg absolute w-[55%] h-full bg-black/20 -left-[10%] skew-x-[7deg] origin-bottom-left p-8 pl-40">
-                  <div className="absolute inset-0 bg-inherit skew-x-[10deg] pointer-events-none"></div>
+                <div className="bg absolute w-full sm:w-[55%] h-[50%] sm:h-full bg-black/20 left-0 sm:-left-[10%] skew-x-0 sm:skew-x-[7deg] origin-bottom-left p-6 sm:p-8 sm:pl-40">
+                  <div className="absolute inset-0 bg-inherit sm:skew-x-[10deg] pointer-events-none"></div>
                 </div>
-                <div className="details z-10 col-span-1 p-10 pl-20">
-                  <h1 className="text-4xl font-medium mb-2">{item.title}</h1>
+                <div className="details z-10 col-span-1 p-6 sm:p-10 sm:pl-20 text-center sm:text-left">
+                  <h1 className="text-2xl sm:text-3xl lg:text-4xl font-medium mb-2">
+                    {item.title}
+                  </h1>
                   <p className="text-gray-400 mb-4">{item.description}</p>
                   {item.link ? (
                     <a
@@ -195,8 +197,8 @@ const PortfolioSlider = () => {
                     </button>
                   )}
                 </div>
-                <div className="illustration col-span-1 flex justify-center">
-                  <div className="inner group relative h-64 w-80 rounded-3xl bg-white/20 skew-x-[-10deg] overflow-hidden transition-transform duration-300 scale-100 hover:scale-110">
+                <div className="illustration col-span-1 flex justify-center items-center">
+                  <div className="inner group relative h-56 w-64 sm:h-64 sm:w-80 rounded-3xl bg-white/20 sm:skew-x-[-10deg] overflow-hidden transition-transform duration-300 scale-100 hover:scale-110">
                     {item.link ? (
                       <a
                         href={
@@ -232,12 +234,12 @@ const PortfolioSlider = () => {
             ))}
           </div>
           <button
-            className="prev absolute top-1/2 left-4 transform -translate-y-1/2 w-12 h-20 cursor-pointer opacity-20 hover:opacity-100 transition-all flex items-center justify-center"
+            className="prev absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 w-10 sm:w-12 h-16 sm:h-20 cursor-pointer opacity-20 hover:opacity-100 transition-all flex items-center justify-center hidden sm:flex"
             onClick={() => slide("decrease")}
             aria-label="Previous project"
           >
             <svg
-              className="w-8 h-8"
+              className="w-6 h-6 sm:w-8 sm:h-8"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 56.898 91"
             >
@@ -249,12 +251,12 @@ const PortfolioSlider = () => {
             </svg>
           </button>
           <button
-            className="next absolute top-1/2 right-4 transform -translate-y-1/2 w-12 h-20 cursor-pointer opacity-20 hover:opacity-100 transition-all flex items-center justify-center"
+            className="next absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 w-10 sm:w-12 h-16 sm:h-20 cursor-pointer opacity-20 hover:opacity-100 transition-all flex items-center justify-center hidden sm:flex"
             onClick={() => slide("increase")}
             aria-label="Next project"
           >
             <svg
-              className="w-8 h-8"
+              className="w-6 h-6 sm:w-8 sm:h-8"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 56.898 91"
             >
@@ -265,14 +267,14 @@ const PortfolioSlider = () => {
               />
             </svg>
           </button>
-          <div className="trail absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4">
+          <div className="trail absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3 sm:gap-4">
             {portfolioItems.map((_, index) => (
               <div
                 key={index}
                 ref={(el) => {
                   trailRefs.current[index] = el;
                 }}
-                className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${
+                className={`w-2 sm:w-3 h-2 sm:h-3 rounded-full cursor-pointer transition-all duration-300 ${
                   index === currentIndex ? "bg-white scale-125" : "bg-gray-600"
                 }`}
                 onClick={() => handleTrailClick(index)}
@@ -300,57 +302,6 @@ const PortfolioSlider = () => {
         }
         .slider {
           transition: transform 0.5s ease-in-out;
-        }
-        @media (max-width: 1000px) {
-          .container {
-            border-radius: 0;
-          }
-          .slider {
-            height: 80vh;
-          }
-        }
-        @media (max-width: 650px) {
-          .box {
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(2, 1fr);
-          }
-          .bg {
-            width: 100%;
-            left: 0;
-            bottom: 0;
-            height: 54%;
-            transform: skewX(0deg);
-          }
-          .bg::before {
-            width: 120%;
-            bottom: 0;
-            transform: skewX(0deg);
-          }
-          .details {
-            grid-row: 2 / span 1;
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 2rem;
-            transform: translateY(-9rem);
-          }
-          .illustration {
-            grid-row: 1 / span 1;
-            grid-column: 1 / -1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-          .prev,
-          .next {
-            display: none;
-          }
-          .trail {
-            bottom: 13%;
-          }
-          .inner {
-            height: 16rem;
-            width: 16rem;
-          }
         }
       `}</style>
     </section>

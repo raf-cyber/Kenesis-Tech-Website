@@ -77,7 +77,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="font-semibold text-white">Email</p>
-                <p className="text-gray-400">contact@kenesis-tech.com</p>
+                <p className="text-gray-400">kenesisntech@gmail.com</p>
               </div>
             </div>
 
@@ -100,7 +100,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="font-semibold text-white">Phone</p>
-                <p className="text-gray-400">+1 (800) 123-4567</p>
+                <p className="text-gray-400">+92 337 0494059</p>
               </div>
             </div>
 

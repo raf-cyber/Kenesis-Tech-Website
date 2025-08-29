@@ -256,8 +256,8 @@ export default function Footer() {
             <p className="mt-2 text-base">
               123 Innovation Drive, Silicon Valley
             </p>
-            <p className="mt-2 text-base">contact@kenesis-tech.com</p>
-            <p className="mt-2 text-base">+1 (800) 123-4567</p>
+            <p className="mt-2 text-base">kenesisntech@gmail.com</p>
+            <p className="mt-2 text-base">+92 337 0494059</p>
           </div>
         </div>
       </div>

@@ -30,7 +30,14 @@ export default function Hero() {
             Start Your Project
             <i className="fas fa-arrow-right ml-2"></i>
           </button>
-          <button className="px-8 py-3 border border-white/30 rounded-lg hover:bg-white/10 transition magnetic">
+          <button
+            onClick={() => {
+              document
+                .getElementById("portfolio")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="px-8 py-3 border border-white/30 rounded-lg hover:bg-white/10 transition magnetic"
+          >
             View Our Work
           </button>
         </div>
