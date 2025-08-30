@@ -234,7 +234,7 @@ const PortfolioSlider = () => {
             ))}
           </div>
           <button
-            className="prev absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 w-10 sm:w-12 h-16 sm:h-20 cursor-pointer opacity-20 hover:opacity-100 transition-all flex items-center justify-center hidden sm:flex"
+            className="prev absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 w-10 sm:w-12 h-16 sm:h-20 cursor-pointer opacity-20 hover:opacity-100 transition-all flex items-center justify-center sm:flex"
             onClick={() => slide("decrease")}
             aria-label="Previous project"
           >
@@ -251,7 +251,7 @@ const PortfolioSlider = () => {
             </svg>
           </button>
           <button
-            className="next absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 w-10 sm:w-12 h-16 sm:h-20 cursor-pointer opacity-20 hover:opacity-100 transition-all flex items-center justify-center hidden sm:flex"
+            className="next absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 w-10 sm:w-12 h-16 sm:h-20 cursor-pointer opacity-20 hover:opacity-100 transition-all flex items-center justify-center sm:flex"
             onClick={() => slide("increase")}
             aria-label="Next project"
           >
