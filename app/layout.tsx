@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Kenesis & Tech" }],
   robots: "index, follow",
   metadataBase: new URL("https://kenesisntech.vercel.app"),
+  verification: {
+    google: "VzOPsMmOpN8rVWGXwpwkHILWhrrAEI3t2f4IvYtbhp8",
+  },
 
   // Open Graph
   openGraph: {
