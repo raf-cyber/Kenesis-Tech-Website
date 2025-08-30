@@ -14,13 +14,13 @@ export default function Hero() {
       <InteractiveConstellation />
 
       <div className="relative z-10 max-w-4xl mx-auto">
-        <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
+        <div className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
           Building the
           <br />
           <span className="bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
             Future Web
           </span>
-        </h1>
+        </div>
         <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
           We craft exceptional digital experiences that push boundaries and
           drive innovation for forward-thinking brands.

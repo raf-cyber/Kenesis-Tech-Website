@@ -71,7 +71,7 @@ const PortfolioSlider = () => {
     const card = cardRefs.current[index];
     if (!card) return;
     const bg = card.querySelector(".bg");
-    const title = card.querySelector("h1");
+    const title = card.querySelector("h2");
     const description = card.querySelector("p");
     const button = card.querySelector("a, button");
     const tl = gsap.timeline({
@@ -171,9 +171,9 @@ const PortfolioSlider = () => {
                   <div className="absolute inset-0 bg-inherit sm:skew-x-[10deg] pointer-events-none"></div>
                 </div>
                 <div className="details z-10 col-span-1 p-6 sm:p-10 sm:pl-20 text-center sm:text-left">
-                  <h1 className="text-2xl sm:text-3xl lg:text-4xl font-medium mb-2">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium mb-2">
                     {item.title}
-                  </h1>
+                  </h2>
                   <p className="text-gray-400 mb-4">{item.description}</p>
                   {item.link ? (
                     <a
