@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-
 export default function Contact() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -9,7 +8,6 @@ export default function Contact() {
     subject: "",
     message: "",
   });
-
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -19,12 +17,9 @@ export default function Contact() {
       [name]: value,
     }));
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
     console.log("Form submitted:", formData);
-    // Reset form
     setFormData({
       firstName: "",
       lastName: "",
@@ -33,35 +28,31 @@ export default function Contact() {
       message: "",
     });
   };
-
   return (
     <section
-      className="section-transition non-hero-section py-20 relative"
+      className="section-transition non-hero-section py-12 md:py-20 relative"
       id="contact"
     >
       {/* Grid background from Services component */}
       <div className="absolute inset-0 w-full h-full grid-bg opacity-10"></div>
-
       {/* Decorative elements */}
-      <div className="absolute top-1/3 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl float-animation"></div>
-      <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl float-animation-reverse"></div>
-
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 relative z-10">
+      <div className="absolute top-1/3 right-0 w-64 h-64 md:w-96 md:h-96 bg-white/10 rounded-full blur-3xl float-animation"></div>
+      <div className="absolute bottom-1/3 left-0 w-64 h-64 md:w-96 md:h-96 bg-white/10 rounded-full blur-3xl float-animation-reverse"></div>
+      <div className="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 md:gap-12 relative z-10">
         {/* Left Column - Contact Information */}
         <div>
-          <h2 className="text-6xl lg:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
             Transforming Vision into Reality
           </h2>
-          <p className="text-gray-400 mb-8 leading-relaxed text-xl">
+          <p className="text-gray-400 mb-6 md:mb-8 leading-relaxed text-lg md:text-xl">
             Ready to bring your digital vision to life? Let's discuss how we can
             help you build something extraordinary.
           </p>
-
-          <div className="space-y-6">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+          <div className="space-y-4 md:space-y-6">
+            <div className="flex items-start space-x-4">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4 md:w-5 md:h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -76,15 +67,18 @@ export default function Contact() {
                 </svg>
               </div>
               <div>
-                <p className="font-semibold text-white">Email</p>
-                <p className="text-gray-400">kenesisntech@gmail.com</p>
+                <p className="font-semibold text-white text-base md:text-lg">
+                  Email
+                </p>
+                <p className="text-gray-400 text-sm md:text-base">
+                  kenesisntech@gmail.com
+                </p>
               </div>
             </div>
-
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+            <div className="flex items-start space-x-4">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4 md:w-5 md:h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -99,15 +93,18 @@ export default function Contact() {
                 </svg>
               </div>
               <div>
-                <p className="font-semibold text-white">Phone</p>
-                <p className="text-gray-400">+92 337 0494059</p>
+                <p className="font-semibold text-white text-base md:text-lg">
+                  Phone
+                </p>
+                <p className="text-gray-400 text-sm md:text-base">
+                  +92 337 0494059
+                </p>
               </div>
             </div>
-
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+            <div className="flex items-start space-x-4">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4 md:w-5 md:h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -128,16 +125,19 @@ export default function Contact() {
                 </svg>
               </div>
               <div>
-                <p className="font-semibold text-white">Location</p>
-                <p className="text-gray-400">17 CCA 1, DHA Rahbar, Sector 1</p>
+                <p className="font-semibold text-white text-base md:text-lg">
+                  Location
+                </p>
+                <p className="text-gray-400 text-sm md:text-base">
+                  17 CCA 1, DHA Rahbar, Sector 1
+                </p>
               </div>
             </div>
           </div>
         </div>
-
         {/* Right Column - Contact Form */}
-        <div className="service-card p-8 rounded-2xl bg-white/10 backdrop-blur-md text-white shadow-lg">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="service-card p-6 md:p-8 rounded-2xl bg-white/10 backdrop-blur-md text-white shadow-lg">
+          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
             <div className="grid md:grid-cols-2 gap-4">
               <input
                 type="text"
@@ -145,7 +145,7 @@ export default function Contact() {
                 value={formData.firstName}
                 onChange={handleChange}
                 placeholder="First Name"
-                className="bg-black/50 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-white/50 transition"
+                className="bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-base focus:outline-none focus:border-white/50 transition w-full"
                 required
               />
               <input
@@ -154,7 +154,7 @@ export default function Contact() {
                 value={formData.lastName}
                 onChange={handleChange}
                 placeholder="Last Name"
-                className="bg-black/50 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-white/50 transition"
+                className="bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-base focus:outline-none focus:border-white/50 transition w-full"
                 required
               />
             </div>
@@ -164,7 +164,7 @@ export default function Contact() {
               value={formData.email}
               onChange={handleChange}
               placeholder="Email Address"
-              className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-white/50 transition"
+              className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-base focus:outline-none focus:border-white/50 transition"
               required
             />
             <input
@@ -173,7 +173,7 @@ export default function Contact() {
               value={formData.subject}
               onChange={handleChange}
               placeholder="Subject"
-              className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-white/50 transition"
+              className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-base focus:outline-none focus:border-white/50 transition"
               required
             />
             <textarea
@@ -182,33 +182,34 @@ export default function Contact() {
               onChange={handleChange}
               placeholder="Your Message"
               rows={5}
-              className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-white/50 transition resize-none"
+              className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-base focus:outline-none focus:border-white/50 transition resize-none"
               required
             ></textarea>
             <button
               type="submit"
-              className="w-full bw-button btn-glow magnetic"
+              className="w-full bw-button btn-glow magnetic text-base md:text-lg py-3 px-4"
             >
-              Send Message
-              <svg
-                className="w-4 h-4 ml-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
+              <span className="flex items-center justify-center">
+                Send Message
+                <svg
+                  className="w-4 h-4 ml-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </span>
             </button>
           </form>
         </div>
       </div>
-
       {/* Custom Styles */}
       <style jsx>{`
         .grid-bg {
@@ -226,7 +227,6 @@ export default function Contact() {
         .bw-button {
           background-color: white;
           color: black;
-          padding: 0.75rem 1.5rem;
           border-radius: 0.5rem;
           font-weight: 600;
           transition: all 0.3s ease;

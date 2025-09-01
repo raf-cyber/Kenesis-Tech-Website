@@ -5,7 +5,7 @@ import InteractiveConstellation from "../common/InteractiveConstellation";
 export default function Hero() {
   return (
     <section
-      className="relative min-h-screen flex flex-col justify-center text-center px-6 overflow-hidden section-transition mb-16"
+      className="relative min-h-screen flex flex-col justify-center text-center px-4 sm:px-6 overflow-hidden section-transition mb-16"
       id="hero"
     >
       <div className="absolute inset-0 w-full h-full hero-gradient"></div>

@@ -1,8 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     const links = document.querySelectorAll('a[href^="#"]');
     links.forEach((link) => {
@@ -19,9 +21,11 @@ export default function Navbar() {
       links.forEach((link) => link.removeEventListener("click", () => {}));
     };
   }, []);
+
   return (
     <header className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-lg border-b border-gray-800 shadow-lg">
-      <div className="navbar-content max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="navbar-content w-full px-4 sm:px-6 py-4 flex items-center justify-between">
+        {/* Logo + Title */}
         <motion.div
           className="flex items-center space-x-3 cursor-pointer"
           whileHover={{ scale: 1.03 }}
@@ -29,17 +33,19 @@ export default function Navbar() {
         >
           <div className="relative">
             <img
-              src="images/K&T-Logo.jpg"
+              src="/images/K&T-Logo.jpg"
               alt="Kenesis & Tech Logo"
-              className="w-10 h-10 object-contain rounded-full border border-gray-700"
+              className="w-9 h-9 sm:w-10 sm:h-10 object-contain rounded-full border border-gray-700"
             />
             <div className="absolute inset-0 rounded-full border border-white opacity-30"></div>
           </div>
-          <h1 className="text-xl font-bold text-white tracking-tight">
+          {/* Hide text on mobile */}
+          <h1 className="hidden md:block text-lg sm:text-xl font-bold text-white tracking-tight">
             Kenesis & Tech
           </h1>
         </motion.div>
 
+        {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-10 text-sm font-medium text-white">
           {["Home", "Services", "FAQ"].map((item) => (
             <motion.a
@@ -59,6 +65,7 @@ export default function Navbar() {
           ))}
         </nav>
 
+        {/* Contact + Hamburger */}
         <div className="flex items-center space-x-4">
           <motion.a
             href="#contact"
@@ -72,7 +79,7 @@ export default function Navbar() {
             Contact Us
           </motion.a>
 
-          {/* Refined 3D Toggle Button */}
+          {/* Hamburger (Mobile only) */}
           <button
             className="md:hidden relative w-10 h-10 flex items-center justify-center focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -87,9 +94,8 @@ export default function Navbar() {
               }}
               transition={{ duration: 0.2 }}
             >
-              {/* 3D Button Container */}
               <div className="absolute inset-0 flex items-center justify-center">
-                {/* Button background with depth */}
+                {/* Button background */}
                 <motion.div
                   className="absolute inset-0 bg-black border border-gray-700 rounded-lg"
                   animate={{
@@ -100,9 +106,8 @@ export default function Navbar() {
                   transition={{ duration: 0.3 }}
                 />
 
-                {/* Menu/Close Icons */}
+                {/* Hamburger / X icon */}
                 <div className="relative z-10 w-5 h-5 flex items-center justify-center">
-                  {/* Hamburger lines */}
                   <motion.div
                     className="absolute w-5 h-0.5 bg-white rounded-full"
                     animate={
@@ -123,40 +128,13 @@ export default function Navbar() {
                     transition={{ duration: 0.3 }}
                   />
                 </div>
-
-                {/* 3D Effect - Top edge */}
-                <motion.div
-                  className="absolute top-0 left-0 right-0 h-px bg-gray-600 rounded-t-lg"
-                  animate={{ opacity: menuOpen ? 0.7 : 0.5 }}
-                  transition={{ duration: 0.3 }}
-                />
-
-                {/* 3D Effect - Left edge */}
-                <motion.div
-                  className="absolute top-0 bottom-0 left-0 w-px bg-gray-600 rounded-l-lg"
-                  animate={{ opacity: menuOpen ? 0.7 : 0.5 }}
-                  transition={{ duration: 0.3 }}
-                />
-
-                {/* 3D Effect - Bottom edge */}
-                <motion.div
-                  className="absolute bottom-0 left-0 right-0 h-px bg-gray-600 rounded-b-lg"
-                  animate={{ opacity: menuOpen ? 0.7 : 0.5 }}
-                  transition={{ duration: 0.3 }}
-                />
-
-                {/* 3D Effect - Right edge */}
-                <motion.div
-                  className="absolute top-0 bottom-0 right-0 w-px bg-gray-600 rounded-r-lg"
-                  animate={{ opacity: menuOpen ? 0.7 : 0.5 }}
-                  transition={{ duration: 0.3 }}
-                />
               </div>
             </motion.div>
           </button>
         </div>
       </div>
 
+      {/* Mobile Dropdown */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
