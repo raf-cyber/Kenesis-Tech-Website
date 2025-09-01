@@ -58,7 +58,7 @@ export default function Preloader() {
         }`}
       >
         <img
-          src="/images/K&T-Logo.jpg"
+          src="/images/KT-Logo-Transparent.png"
           alt="Kenesis & Tech"
           className="w-32 h-32 sm:w-40 sm:h-40 object-contain"
         />
