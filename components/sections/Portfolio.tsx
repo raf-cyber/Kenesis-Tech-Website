@@ -33,8 +33,9 @@ const PortfolioSlider = () => {
     },
     {
       id: 3,
-      title: "Caulfield High — 1970's Gallery",
-      description: "A digital gallery capturing high school life in the 1970s.",
+      title: "Conva AI — Intelligent Document Assistant",
+      description:
+        "A smart platform for document analysis, annotations, and seamless AI-powered chat & voice assistance.",
       videoUrl: "/videos/Portfolio-3.mp4",
       category: "Branding",
       link: "https://hypermind-chi.vercel.app/",

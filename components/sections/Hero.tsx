@@ -26,7 +26,14 @@ export default function Hero() {
           drive innovation for forward-thinking brands.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="bw-button btn-glow magnetic">
+          <button
+            onClick={() => {
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="bw-button btn-glow magnetic"
+          >
             Start Your Project
             <i className="fas fa-arrow-right ml-2"></i>
           </button>
