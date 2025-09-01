@@ -253,9 +253,7 @@ export default function Footer() {
               © 2024 Kenesis & Tech. All rights reserved.
             </p>
             <p className="mt-3 text-base">Kenesis Technologies Inc.</p>
-            <p className="mt-2 text-base">
-              123 Innovation Drive, Silicon Valley
-            </p>
+            <p className="mt-2 text-base">17 CCA 1, DHA Rahbar, Sector 1</p>
             <p className="mt-2 text-base">kenesisntech@gmail.com</p>
             <p className="mt-2 text-base">+92 337 0494059</p>
           </div>

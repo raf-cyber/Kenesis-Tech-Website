@@ -129,7 +129,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="font-semibold text-white">Location</p>
-                <p className="text-gray-400">Silicon Valley, CA</p>
+                <p className="text-gray-400">17 CCA 1, DHA Rahbar, Sector 1</p>
               </div>
             </div>
           </div>
