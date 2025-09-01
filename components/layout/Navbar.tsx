@@ -35,9 +35,9 @@ export default function Navbar() {
             />
             <div className="absolute inset-0 rounded-full border border-white opacity-30"></div>
           </div>
-          <div className="text-xl font-bold text-white tracking-tight">
+          <h1 className="text-xl font-bold text-white tracking-tight">
             Kenesis & Tech
-          </div>
+          </h1>
         </motion.div>
 
         <nav className="hidden md:flex space-x-10 text-sm font-medium text-white">

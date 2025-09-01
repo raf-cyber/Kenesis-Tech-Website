@@ -71,7 +71,7 @@ const PortfolioSlider = () => {
     const card = cardRefs.current[index];
     if (!card) return;
     const bg = card.querySelector(".bg");
-    const title = card.querySelector("h1");
+    const title = card.querySelector("h2");
     const description = card.querySelector("p");
     const button = card.querySelector("a, button");
     const tl = gsap.timeline({
@@ -171,9 +171,9 @@ const PortfolioSlider = () => {
                   <div className="absolute inset-0 bg-inherit sm:skew-x-[10deg] pointer-events-none"></div>
                 </div>
                 <div className="details z-10 col-span-1 p-6 sm:p-10 sm:pl-20 text-center sm:text-left">
-                  <h1 className="text-2xl sm:text-3xl lg:text-4xl font-medium mb-2">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium mb-2">
                     {item.title}
-                  </h1>
+                  </h2>
                   <p className="text-gray-400 mb-4">{item.description}</p>
                   {item.link ? (
                     <a
@@ -234,7 +234,7 @@ const PortfolioSlider = () => {
             ))}
           </div>
           <button
-            className="prev absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 w-10 sm:w-12 h-16 sm:h-20 cursor-pointer opacity-20 hover:opacity-100 transition-all flex items-center justify-center hidden sm:flex"
+            className="prev absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 w-10 sm:w-12 h-16 sm:h-20 cursor-pointer opacity-20 hover:opacity-100 transition-all flex items-center justify-center sm:flex"
             onClick={() => slide("decrease")}
             aria-label="Previous project"
           >
@@ -251,7 +251,7 @@ const PortfolioSlider = () => {
             </svg>
           </button>
           <button
-            className="next absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 w-10 sm:w-12 h-16 sm:h-20 cursor-pointer opacity-20 hover:opacity-100 transition-all flex items-center justify-center hidden sm:flex"
+            className="next absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 w-10 sm:w-12 h-16 sm:h-20 cursor-pointer opacity-20 hover:opacity-100 transition-all flex items-center justify-center sm:flex"
             onClick={() => slide("increase")}
             aria-label="Next project"
           >
