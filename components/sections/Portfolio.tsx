@@ -47,7 +47,7 @@ const PortfolioSlider = () => {
         "A sleek eCommerce platform with stylish UI and smooth shopping flow.",
       videoUrl: "/videos/Portfolio-1.mp4",
       category: "Design",
-      link: "convaai.vercel.app",
+      link: "https://zubies.com/catalog/men/",
     },
     {
       id: 5,
