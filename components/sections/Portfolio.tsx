@@ -17,12 +17,11 @@ const PortfolioSlider = () => {
   const portfolioItems: PortfolioItem[] = [
     {
       id: 1,
-      title: "Zubies — Fashion Website",
-      description:
-        "A sleek eCommerce platform with stylish UI and smooth shopping flow.",
-      videoUrl: "/videos/Portfolio-1.mp4",
-      category: "Design",
-      link: "convaai.vercel.app",
+      title: "SmartCoding — LMS Platform",
+      description: "An LMS for coding courses with seamless learning & sales.",
+      videoUrl: "/videos/Portfolio-4.mp4",
+      category: "Marketing",
+      link: "https://scc-courses-main.vercel.app/",
     },
     {
       id: 2,
@@ -42,11 +41,12 @@ const PortfolioSlider = () => {
     },
     {
       id: 4,
-      title: "SmartCoding — LMS Platform",
-      description: "An LMS for coding courses with seamless learning & sales.",
-      videoUrl: "/videos/Portfolio-4.mp4",
-      category: "Marketing",
-      link: "https://scc-courses-main.vercel.app/",
+      title: "Zubies — Fashion Website",
+      description:
+        "A sleek eCommerce platform with stylish UI and smooth shopping flow.",
+      videoUrl: "/videos/Portfolio-1.mp4",
+      category: "Design",
+      link: "convaai.vercel.app",
     },
     {
       id: 5,
