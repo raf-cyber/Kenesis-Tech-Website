@@ -94,33 +94,58 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              "@id": "https://kenesisntech.com/#organization",
-              "name": "Kenesis & Tech",
-              "url": "https://kenesisntech.com",
-              "logo": "https://kenesisntech.com/images/og-image.png",
-              "sameAs": [
-                "https://www.facebook.com/kenesisntech",
-                "https://www.linkedin.com/company/kenesisntech",
-                "https://twitter.com/kenesisntech"
-              ],
-              "description": "Kenesis & Tech provides cutting-edge software development, AI solutions, and web technologies.",
-              "foundingDate": "2023-01-01",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Lahore",
-                "addressCountry": "Pakistan"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "email": "info@kenesisntech.com",
-                "contactType": "customer service",
-                "areaServed": "Worldwide",
-                "availableLanguage": ["English", "Urdu"]
-              }
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://kenesisntech.com/#organization",
+                  name: "Kenesis & Tech",
+                  alternateName: ["KenesisnTech", "Kenesis and Tech"],
+                  url: "https://kenesisntech.com",
+                  logo: "https://kenesisntech.com/images/og-image.png",
+                  description:
+                    "Kenesis & Tech provides cutting-edge software development, AI solutions, and web technologies.",
+                  foundingDate: "2023-01-01",
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress: "Main Boulevard",
+                    addressLocality: "Lahore",
+                    postalCode: "54000",
+                    addressCountry: "PK"
+                  },
+                  contactPoint: [
+                    {
+                      "@type": "ContactPoint",
+                      email: "info@kenesisntech.com",
+                      contactType: "customer service",
+                      areaServed: "Worldwide",
+                      availableLanguage: ["English", "Urdu"]
+                    }
+                  ],
+                  sameAs: [
+                    "https://www.facebook.com/kenesisntech",
+                    "https://www.linkedin.com/company/kenesisntech",
+                    "https://twitter.com/kenesisntech",
+                    "https://www.instagram.com/kenesisntech",
+                    "https://www.crunchbase.com/organization/kenesisntech"
+                  ]
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://kenesisntech.com/#website",
+                  url: "https://kenesisntech.com",
+                  name: "Kenesis & Tech",
+                  publisher: { "@id": "https://kenesisntech.com/#organization" },
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target: "https://kenesisntech.com/?s={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                  }
+                }
+              ]
             }),
           }}
         />
+
 
       </body>
     </html>
