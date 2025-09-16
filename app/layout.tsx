@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   verification: {
     google: "ieLtT_gR0jAf7YltmUvKFzILfJZsfqxZ6upfan0kv98",
   },
-  
+
   // Open Graph
   openGraph: {
     title: "Kenesis & Tech | Custom Software, AI & Web Solutions",
@@ -95,19 +95,33 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Kenesis & Tech",
-              url: "https://kenesisntech.com",
-              logo: "https://kenesisntech.com/images/og-image.png",
-              sameAs: [
+              "@id": "https://kenesisntech.com/#organization",
+              "name": "Kenesis & Tech",
+              "url": "https://kenesisntech.com",
+              "logo": "https://kenesisntech.com/images/og-image.png",
+              "sameAs": [
                 "https://www.facebook.com/kenesisntech",
                 "https://www.linkedin.com/company/kenesisntech",
-                "https://twitter.com/kenesisntech",
+                "https://twitter.com/kenesisntech"
               ],
-              description:
-                "Kenesis & Tech provides cutting-edge software development, AI solutions, and web technologies.",
+              "description": "Kenesis & Tech provides cutting-edge software development, AI solutions, and web technologies.",
+              "foundingDate": "2023-01-01",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Lahore",
+                "addressCountry": "Pakistan"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "info@kenesisntech.com",
+                "contactType": "customer service",
+                "areaServed": "Worldwide",
+                "availableLanguage": ["English", "Urdu"]
+              }
             }),
           }}
         />
+
       </body>
     </html>
   );
