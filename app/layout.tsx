@@ -13,7 +13,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Kenesis & Tech | Software, AI & Web Solutions – Lahore, Pakistan",
   description:
-    "Kenesis & Tech is a Lahore‑based tech agency offering custom software development, AI & machine learning tools, web design & development, and digital transformation services for businesses globally.",
+    "Kenesis & Tech delivers custom software, AI solutions, and web development services to help businesses innovate, scale, and achieve digital success.",
   keywords: [
     "Kenesis & Tech",
     "Kenesis",
