@@ -96,8 +96,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Kenesis & Tech",
-              url: "https://kenesisntech.vercel.app/",
-              logo: "https://kenesisntech.vercel.app/images/og-image.png",
+              url: "https://kenesisntech.com",
+              logo: "https://kenesisntech.com/images/og-image.png",
               sameAs: [
                 "https://www.facebook.com/kenesisntech",
                 "https://www.linkedin.com/company/kenesisntech",
