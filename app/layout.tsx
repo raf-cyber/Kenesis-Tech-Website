@@ -11,35 +11,41 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Kenesis & Tech | Software, AI & Web Solutions",
+  title: "Kenesis & Tech | Software, AI & Web Solutions – Lahore, Pakistan",
   description:
-    "Kenesis & Tech provides cutting-edge software development, AI solutions, and web technologies to help ambitious brands worldwide innovate and grow.",
+    "Kenesis & Tech is a Lahore‑based tech agency offering custom software development, AI & machine learning tools, web design & development, and digital transformation services for businesses globally.",
   keywords: [
     "Kenesis & Tech",
     "Kenesis",
-    "software development",
+    "software development company Pakistan",
     "AI solutions",
-    "web development",
+    "machine learning",
+    "web development agency",
+    "web design Lahore",
+    "digital transformation",
+    "tech agency",
+    "custom software solutions",
+    "enterprise software",
     "IT services Pakistan",
-    "technology company",
+    "startup technology partner"
   ],
   authors: [{ name: "Kenesis & Tech" }],
   robots: "index, follow",
-  metadataBase: new URL("https://kenesisntech.vercel.app"),
+  metadataBase: new URL("https://kenesisntech.com"),
   verification: {
-    google: "VzOPsMmOpN8rVWGXwpwkHILWhrrAEI3t2f4IvYtbhp8",
+    google: "ieLtT_gR0jAf7YltmUvKFzILfJZsfqxZ6upfan0kv98",
   },
-
+  
   // Open Graph
   openGraph: {
-    title: "Kenesis & Tech | Software, AI & Web Solutions",
+    title: "Kenesis & Tech | Custom Software, AI & Web Solutions",
     description:
-      "Kenesis & Tech specializes in building scalable software, AI tools, and modern web platforms for businesses worldwide.",
-    url: "https://kenesisntech.vercel.app/",
+      "Pioneering software and AI systems from Lahore — scalable web platforms, machine learning tools & digital services crafted for growth.",
+    url: "https://kenesisntech.com/",
     siteName: "Kenesis & Tech",
     images: [
       {
-        url: "/images/og-image.png", // Add this image in your public/images folder
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Kenesis & Tech Logo",
@@ -54,21 +60,21 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kenesis & Tech | Software, AI & Web Solutions",
     description:
-      "Kenesis & Tech provides software, AI, and web solutions tailored for modern businesses.",
+      "Software, web & AI solutions by Kenesis & Tech. From Lahore to the world — building modern, scalable digital platforms.",
     images: ["/images/og-image.png"],
-    creator: "@kenesisntech", // add your Twitter handle if available
+    creator: "@kenesisntech",
   },
 
   // Icons
   icons: {
-    icon: "/images/KnT-Logo.png",
-    shortcut: "/images/KnT-Logo.png",
-    apple: "/images/KnT-Logo.png",
+    icon: "/images/favicon.png",
+    shortcut: "/images/favicon.png",
+    apple: "/images/favicon.png",
   },
 
   // Canonical
   alternates: {
-    canonical: "https://kenesisntech.vercel.app/",
+    canonical: "https://kenesisntech.com/",
   },
 };
 
@@ -91,7 +97,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Kenesis & Tech",
               url: "https://kenesisntech.vercel.app/",
-              logo: "https://kenesisntech.vercel.app/images/KnT-Logo.png",
+              logo: "https://kenesisntech.vercel.app/images/og-image.png",
               sameAs: [
                 "https://www.facebook.com/kenesisntech",
                 "https://www.linkedin.com/company/kenesisntech",
