@@ -4,9 +4,15 @@ import { useEffect, useState } from "react";
 
 export default function CustomCursor() {
   const [preloaderActive, setPreloaderActive] = useState(true);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
-  // Hide cursor while preloader is active
   useEffect(() => {
+    setIsTouchDevice("ontouchstart" in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  useEffect(() => {
+    if (isTouchDevice) return;
+
     const preloader = document.querySelector("[data-preloader]");
     if (!preloader) {
       setPreloaderActive(false);
@@ -19,10 +25,11 @@ export default function CustomCursor() {
       });
       observer.observe(document.body, { childList: true, subtree: true });
     }
-  }, []);
+  }, [isTouchDevice]);
 
-  // Move cursor
   useEffect(() => {
+    if (isTouchDevice) return;
+
     const cursor = document.querySelector(".cursor") as HTMLElement;
     if (!cursor) return;
 
@@ -32,11 +39,12 @@ export default function CustomCursor() {
     };
 
     document.addEventListener("mousemove", moveCursor);
-
     return () => {
       document.removeEventListener("mousemove", moveCursor);
     };
-  }, []);
+  }, [isTouchDevice]);
+
+  if (isTouchDevice) return null;
 
   return (
     <div
