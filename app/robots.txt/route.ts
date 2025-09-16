@@ -7,7 +7,7 @@ Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
 
-Sitemap: https://kenesisntech.vercel.app/sitemap.xml
+Sitemap: https://kenesisntech.com/sitemap.xml
 `,
     {
       headers: {
